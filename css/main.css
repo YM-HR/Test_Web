@@ -1,0 +1,427 @@
+@charset "utf-8";
+/*基本情報*/
+/* ユニバーサルセレクタで余白リセット */
+* {
+	margin: 0;
+	padding: 0;
+}
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+body {
+  	/*font-family: 'Noto Sans JP', sans-serif;*/
+  	font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+
+		/*背景色*/
+	  background:
+   		-webkit-linear-gradient(
+	      hsla(30, 90%, 90%, 1),
+	      hsla(30, 100%, 100%, 1)
+			);
+		background:
+			-moz-linear-gradient(
+			  hsla(30, 90%, 90%, 1),
+	    	hsla(30, 100%, 100%, 1)
+			);
+		background:
+			-o-linear-gradient(
+			  hsla(30, 90, 90%, 1),
+			  hsla(30, 100%, 100%, 1)
+			);
+			  background:
+			linear-gradient(
+			   hsla(30, 90%, 90%, 1),
+			   hsla(30, 100%, 100%, 1)
+	   	);
+}
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style-type: none;
+    outline: none;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,800,400&subset=latin,latin-ext);
+
+#page {
+  width: 99%;
+  margin: 0 auto;
+  border: blue 5px solid;
+}
+
+/*header用*/
+@media screen and (min-width: 700px) {
+#page {
+	  width: 98%;
+	  border-color: blue;
+}
+header {
+    height: 510px;/*この辺合わせる*/
+    z-index: 10;
+}
+.header-banner {
+    background-color: #333;
+    background-image: url('https://madaame-shigureui.com/assets/img/event_img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 450px;/*この辺合わせる*/
+}
+
+#header .inner nav {
+    width: 100%;
+    height: 60px;
+    background: #FFE5E5;
+    postion: fixed;
+    z-index: 10;
+}
+
+#header .inner nav div {
+    color: #5E390F;
+    font-size: 2rem;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    visibility: hidden;
+}
+
+#header nav ul {
+    list-style-type: none;
+    margin: 0 2% auto 0;
+    padding-left: 0;
+    text-align: center;
+    max-width: 100%;
+}
+#header nav ul li {
+		display: table-cell;
+		min-width: 50px;
+    display: inline-block;
+    line-height: 60px;
+    margin-left: 5px;
+}
+#header nav ul li a {
+		display: block;
+		width: 100%;
+
+		text-decoration: none;
+    color: #5E390F;
+		font-weight: bold;
+}
+#header ul li.current{
+background-color: #DEEBF7;
+}
+#header ul li.current a{
+color: #555;
+}
+#header ul li:hover{
+background-color: #FFF2CC;
+}
+}
+
+/*main用*/
+.contents {
+  font-size: 1.6rem;
+  margin-bottom: 10em;
+}
+
+.contents,
+.content {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s;
+}
+.contents.visible,
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading-2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  text-align: center;
+  color: #fffffc;
+  background-color: #9F2136;/*#192f60;*/
+  border-radius: 4px;
+}
+.heading-2::after {
+  display: block;
+  font-size: 1rem;
+  content: attr(data-subheading);
+  color: #eae5e3;
+}
+.heading-3 {
+  font-size: 1.8rem;
+  margin: 3em 0 1em;
+  padding-left: 1em;
+  letter-spacing: .1em;
+  border-left: 10px solid #192f60;
+  border-bottom: 2px solid #192f60;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.postPageBackParagraph {
+  padding: 100px 1em 100px;
+  text-align: center;
+}
+.postPageBackParagraph a {
+  text-decoration: none;
+}
+.postPageBackParagraph a,
+.postPageBackParagraph a:link {
+  font-weight: bold;
+  color: #192f60;
+}
+.postPageBackParagraph a:visited {
+  color: #551A8B;
+}
+.postPageBackParagraph a:hover {
+  opacity: .7;
+}
+
+/*footer用*/
+.my-twitter {color: #ffffff}
+.my-youtube {color: #ffffff}
+.my-pixiv {filter: brightness(500);}
+
+.my-twitter:hover {color: #E1E1E1;}
+.my-youtube:hover {color: #E1E1E1;}
+.my-pixiv:hover {filter: brightness(2);}
+
+#footer {
+	background-color: #6B0F08;
+	color: #fff;
+  border-top: solid 1px lightgray;
+	padding-top: 10px;
+  padding-bottom: 10px;
+}
+#l-footer__sns-link {
+	float: left;
+	padding-left: 1.0em
+}
+#r-footer {
+	text-align: right;
+	padding-right: 6.0em
+}
+#footer ul li {
+  padding: 0.4px;
+  display: inline;
+}
+.end-text{
+	font-size: 1px;
+}
+
+
+/*　ハンバーガーボタン　*/
+@media screen and (max-width: 700px) {
+  #page {
+	    border-color: red;
+  }
+	.header-banner {
+			background-color: #333;
+			background-image: url('https://madaame-shigureui.com/assets/img/event_img.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 510px;/*この辺合わせる*/
+	}
+
+	.sm {
+		  display: block;
+		  position: fixed;
+		  background-color: #ffffff;
+		  width: 220px;
+		  top: 0;
+		  left: -300px;
+		  bottom: 0;
+		  transition: all 0.5s;
+		  z-index: 3;
+		  opacity: 0;
+	}
+
+	.open nav {
+		  left: 0;
+		  opacity: 1;
+	}
+
+	nav .inner {
+		  padding: 25px;
+	}
+
+	nav .inner ul {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+	}
+
+	nav .inner ul li {
+		  margin: 0;
+		  border-bottom: 1px solid #333;
+	}
+
+	nav .inner ul li a {
+		  display: block;
+		  color: #333;
+		  font-size: 14px;
+		  padding: 1rem;
+		  text-decoration: none;
+		  transition-duration: 0.2s;
+	}
+
+	nav .inner ul li a:hover {
+		  background: #e4e4e4;
+	}
+
+	.toggle-btn {
+		  display: block;
+		  position: fixed;
+		  top: 30px;
+		  right: 30px;
+		  width: 30px;
+		  height: 30px;
+		  z-index: 3;
+		  cursor: pointer;
+	}
+
+	.toggle-btn span {
+		  position: absolute;
+		  display: block;
+		  left: 0;
+		  width: 30px;
+		  height: 2px;
+		  background-color: #333;
+		  transition: all 0.5s;
+		  border-radius: 4px;
+	}
+
+	.toggle-btn span:nth-child(1) {
+		  top: 4px;
+	}
+	.toggle-btn span:nth-child(2) {
+		  top: 14px;
+	}
+	.toggle-btn span:nth-child(3) {
+		  bottom: 4px;
+	}
+
+	.open .toggle-btn span {
+		  background-color: #fff;
+	}
+
+	.open .toggle-btn span:nth-child(1) {
+		  transform: translateY(10px) rotate(-315deg);
+	}
+
+	.open .toggle-btn span:nth-child(2) {
+		  opacity: 0;
+	}
+
+	.open .toggle-btn span:nth-child(3) {
+		  transform: translateY(-10px) rotate(315deg);
+	}
+
+	#mask {
+		  display: none;
+		  transition: all 0.5s;
+	}
+
+	.open #mask {
+		  display: block;
+		  background: #000;
+		  width: 100%;
+		  height: 100%;
+		  top: 0;
+		  left: 0;
+		  position: fixed;
+		  opacity: 0.8;
+		  z-index: 2;
+		  cursor: pointer;
+	}
+	.flex-container { display: flex; }
+	.image-wrap{ margin: 7px 2px; }
+	.image-wrap img { height: 70px; }
+	#flex {
+		float: left;
+		width: 50%;
+	}
+	#site_reserve {
+		float: right;
+		width: 70%;
+		text-align: right;
+		margin-top: 50px;
+	}
+	.site_tel {
+		font-size: 1.2em;
+		color: #C20D23;
+	}
+	#content {
+		width: 100%;
+	}
+	#r-footer {
+		text-align: right;
+		padding-right: 2.0em
+	}
+}
+
+/*スクロールバー(上部へ戻る用)*/
+html{
+    scroll-behavior: smooth;
+}
+.gotop{
+    display: block;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    background: #FFF;
+    border: 1px solid #999;
+    padding-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    font-size: 85%;
+    text-decoration: none;
+    color: #333;
+    opacity: 0.5;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 10000;
+}
+.gotop::before{
+    content: "";
+    display: block;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    width: 25%;
+    height: 25%;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+.gotop:hover{
+    opacity: 1;
+}
+@media(max-width:700px){
+    .gotop{
+        width: 40px;
+        height: 40px;
+        text-indent: -9999px;
+        opacity: 1;
+        border: none;
+        background: none;
+        bottom: 10px;
+        right: 10px;
+    }
+    .gotop::before{
+        bottom: 0;
+    }
+}
