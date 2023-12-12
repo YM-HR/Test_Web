@@ -130,16 +130,19 @@ background-color: #FFF2CC;
 
 
 /*main用*/
-.content_first {
+hr {
+	height: 0px;
+	width: 0px;
+}
+.content_intro {
 	position: relative;
 	display: flex;
 	width : calc(100% / 2);
     padding: 5px;
 	width: 100%;
 	float: left;
-	background-color: rgba(246, 228, 188, 1);
 }
-.content_first > div{
+.content_intro > div{
 	width: 50%;
 }
 #left_section {
@@ -147,7 +150,7 @@ background-color: #FFF2CC;
 	margin-left: 15%;
 	top: 15%;
 }
-.content_first .txt{
+.content_intro .txt{
 	display: block;
 	color: #321e08;
 	font-family:"BIZ UDPGothic";
@@ -159,12 +162,14 @@ background-color: #FFF2CC;
 	font-size: 1.3vw;
 	margin-left: 0%;
 	background-color: rgba(255, 255, 255, 0.95);
+	border: 5px solid #FFF;
+    box-shadow: 0 0 5px #999;
 	padding-left:20px;
 	padding-right:20px;
 	padding-bottom:  15px;
 	border-radius: 10px 10px 10px 10px;
 }
-.content_first .sono1{
+.content_intro .sono1{
 	display: inline-block;
 	font-family: "Hiragino Kaku Gothic ProN";
 	padding-top:  15px;
@@ -173,7 +178,7 @@ background-color: #FFF2CC;
 	font-size: 1.2vw;
 }
 
-.content_first>div{
+.content_intro>div{
     padding: 10px 30px;
     margin: 0;
     list-style: none;
@@ -186,7 +191,8 @@ background-color: #FFF2CC;
   background:#9e9e9e00;
 }
 .parent img{
-	border: solid 5px #ffffff;
+	border: 5px solid #FFF;
+    box-shadow: 0 0 5px #999;
 }
 .children1{
 	position:absolute;
@@ -231,12 +237,12 @@ background-color: #FFF2CC;
     z-index: 20;
 }
 
-.content_first .right_section img{
+.content_intro .right_section img{
 	background: #ffffff00;
 	
 }
 
-.content_first .child-test01 {
+.content_intro .child-test01 {
 	width: calc(100% + 10px);
 	background: #EECE34;
 }
@@ -244,47 +250,115 @@ background-color: #FFF2CC;
 .contents {
   font-size: 1.6rem;
   margin-bottom: 10em;
-}
-
-.contents,
-.content {
   opacity: 0;
   transform: translateY(100px);
   transition: all 1.5s;
 }
-.contents.visible,
-.content.visible {
+.contents.visible{
   opacity: 1;
   transform: translateY(0);
 }
+.content_1,
+.content_2,
+.content_3 {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s;
+}
+.content_1.visible,
+.content_2.visible,
+.content_3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.content_close {
+	font-size: 1.6rem;
+	margin-bottom: 10em;
+	opacity: 0;
+	transform: translateY(100px);
+	transition: all 1.5s;
+  }
+.content_close.visible{
+	opacity: 1;
+	transform: translateY(0);
+}
 
-.heading-2 {
-  font-size: 2rem;
-  margin-bottom: 2em;
-  padding: .5em 1em;
-  text-align: center;
-  color: #fffffc;
-  background-color: #9F2136;/*#192f60;*/
-  border-radius: 4px;
-}
-.heading-2::after {
-  display: block;
-  font-size: 1rem;
-  content: attr(data-subheading);
-  color: #eae5e3;
-}
-.heading-3 {
+/*.heading-3 {
   font-size: 90%;
   margin: 3em 0 1em;
   padding-left: 1em;
   margin-left: 5%;
-  margin-right: 5%;
   letter-spacing: .1em;
   border-left: 10px solid #9F2136;
   border-bottom: 2px solid #9F2136;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+}*/
+
+.s_txt{ 
+	font-size: 0.4em; 
+	line-height: 1em; 
+	letter-spacing: 0.1em; 
+	padding-left: 4px;
 }
+.main_tit{ 
+	display: block; 
+	width: calc(100% - 100px); 
+	margin-left: 5%; 
+	text-align: left; 
+	position: relative;
+	top: -27px;
+	z-index: 1;
+}
+.heading-1,
+.heading-2,
+.heading-3{ 
+	content:""; 
+	position: absolute; 
+	width: 94%; 
+	height: 46px; 
+	top: 10px; 
+	border-radius: 0 50px 50px 0; 
+	left: 0; 
+	z-index: -1;
+}
+.heading-1 {
+	background-color: #ce495f; 
+}
+.heading-2 {
+	background-color: #e9776f; 
+}
+.heading-3 {
+	background-color: #ffac8c; 
+}
+.slidein {
+    opacity: 0;
+    transform: translate(0,0);
+    transition: all 1.0s;
+	transform: translate(-100%,0);
+	&.scrollin{
+	  transform: translate(0, 0)!important;
+	  opacity: 1!important;
+	}
+}
+/*キャラクターの紹介*/
+.character_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 30px 0;
+    padding-top: 30px;
+	margin-left: auto;
+    margin-right: auto;
+}
+.item_box {
+    width: calc(100% / 4 - 30px);
+    margin-bottom: 30px;
+    padding: 50px 10px;
+    text-align: center;
+}
+
 .postPageBackParagraph {
   padding: 100px 1em 100px;
   text-align: center;
@@ -303,6 +377,68 @@ background-color: #FFF2CC;
 .postPageBackParagraph a:hover {
   opacity: .7;
 }
+
+/*横スクロールloop*/
+.x-scroll {
+	width: 100%;
+	overflow: hidden;
+}
+.x-scroll_inner {
+	display: flex;
+	animation: 30s linear infinite xScroll;
+}
+@keyframes xScroll {
+	0%     { transform: translateX(0);}
+	100% { transform: translateX(-1610px);} /* .x-scroll_block 1つ分の幅だけ動かす */
+}
+.x-scroll_block {
+	display: flex;
+	width: 1610px; /* (320px + 20px) + 5 */
+}
+.x-scroll_item {
+	width: 320px;
+	height: 180px;
+	margin: 1px;
+}
+.x-scroll_item:nth-child(1) {
+	background: pink;
+}
+.x-scroll_item:nth-child(2) {
+	background: red;
+}
+.x-scroll_item:nth-child(3) {
+	background: purple;
+}
+.x-scroll_item:nth-child(4) {
+	background: blue;
+}
+.x-scroll_item:nth-child(5) {
+	background: skyblue;
+}
+.null {
+	padding: 10px 1em 10px;
+	text-align: center;
+}
+/*最後の写真*/
+.yorosiku{
+	position: relative;
+	text-align: center;
+}
+.yorosiku::before {
+	z-index: -1;
+    position: absolute;
+    inset: -8% 20% 8% 10%;
+    border: 3px solid #ff0000;
+	border-radius: 100px 100px 100px 100px;
+    content: '';
+}
+.example5 {
+	border-radius: 100px 100px 100px 100px;
+}
+/*
+.example5 {
+	box-shadow: -50px -50px 0 #519538;
+}*/
 
 /*footer用*/
 .my-twitter {color: #ffffff}
@@ -357,12 +493,28 @@ background-color: #FFF2CC;
 			width: 100%;
 			height: 510px;/*この辺合わせる*/
 	}
-	.heading-1 {
-		padding: .5em 1em;
+	.heading-1,.heading-2,.heading-3 {
+		padding: .1em;
 		text-align: center;
 		color: #fffffc;
 		background-color: #9F2136;/*#192f60;*/
-		border-radius: 4px;
+		border-radius: 0 50px 50px 0; 
+	}
+	.s_txt{ 
+		font-size: 0.4em; 
+		line-height: 1em; 
+		letter-spacing: 0.1em; 
+		padding-left: 4px;
+	}
+	.main_tit{ 
+		font-size: 0.8em; 
+		display: block; 
+		width: calc(100% - 100px); 
+		margin-left: 5%; 
+		text-align: left; 
+		position: relative;
+		top: -5px;
+		z-index: 1;
 	}
 
 	.sm {
